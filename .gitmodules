@@ -1,0 +1,6 @@
+[submodule "srcs/back_end"]
+	path = srcs/back_end
+	url = https://github.com/42trancendence/back_end.git
+[submodule "srcs/front_end"]
+	path = srcs/front_end
+	url = https://github.com/42trancendence/front_end.git
