@@ -12,23 +12,23 @@ services:
     image: postgres:15 # lastest on 2023-05-13
     init: true
     restart: always
-    env_file: 
+    env_file:
       - ./srcs/front_end/.env.local
       - ./srcs/back_end/src/config/env/.development.env
     volumes:
-      - ./srcs/db/data:/var/lib/postgresql/data
+      - db-data:/var/lib/postgresql/data
     networks:
       - transpong-network
-  
+
   nginx:
-    image: nginx:latest 
-    restart: always 
-    container_name: transpong-nginx 
-    ports: 
+    image: nginx:latest
+    restart: always
+    container_name: transpong-nginx
+    ports:
       - 80:80
-    volumes: 
+    volumes:
       - ./srcs/nginx/conf:/etc/nginx/conf.d:ro
-    networks: 
+    networks:
       - transpong-network
 
   frontend:
@@ -37,12 +37,12 @@ services:
     build: ./srcs/front_end
     init: true
     restart: always
-    env_file: 
+    env_file:
       - ./srcs/front_end/.env.local
       - ./srcs/back_end/src/config/env/.development.env
     volumes:
       - ./srcs/front_end:/transpong
-    # ports: 
+    # ports:
     #   - 8080:4000
     networks:
       - transpong-network
@@ -55,12 +55,15 @@ services:
     build: ./srcs/back_end
     init: true
     restart: always
-    env_file: 
+    env_file:
       - ./srcs/front_end/.env.local
       - ./srcs/back_end/src/config/env/.development.env
-    volumes: 
+    volumes:
       - ./srcs/back_end:/transpong
-    # ports: 
+    # ports:
     #   - 8080:3000
     networks:
       - transpong-network
+
+volumes:
+  db-data:
