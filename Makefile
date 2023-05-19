@@ -6,7 +6,7 @@ all:
 down:
 	docker stop `docker ps -a -q`
 
-re:
+re: clean
 	docker-compose up --build
 
 clean:  down
