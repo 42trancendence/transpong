@@ -14,7 +14,7 @@ services:
     restart: always
     env_file:
       - ./srcs/front_end/.env.local
-      - ./srcs/back_end/src/config/env/.development.env
+      - ./srcs/back_end/src/config/env/.${BUILD_MODE}.env
     volumes:
       - db-data:/var/lib/postgresql/data
     networks:
@@ -39,7 +39,7 @@ services:
     restart: always
     env_file:
       - ./srcs/front_end/.env.local
-      - ./srcs/back_end/src/config/env/.development.env
+      - ./srcs/back_end/src/config/env/.${BUILD_MODE}.env
     volumes:
       - ./srcs/front_end:/transpong
     # ports:
@@ -57,7 +57,7 @@ services:
     restart: always
     env_file:
       - ./srcs/front_end/.env.local
-      - ./srcs/back_end/src/config/env/.development.env
+      - ./srcs/back_end/src/config/env/.${BUILD_MODE}.env
     volumes:
       - ./srcs/back_end:/transpong
     # ports:
