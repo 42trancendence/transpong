@@ -6,6 +6,15 @@ networks:
     driver: bridge
 
 services:
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8282:8080
+    networks:
+      - transpong-network
+
   database:
     container_name: transpong-database
     # hostname: transdb_host
