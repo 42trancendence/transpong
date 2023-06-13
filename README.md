@@ -10,7 +10,7 @@ Transpong has following stack.
 
 # Usage
 
-### Currently, the application is not available to anyone who is not a member of a 42 institution. We ar plannig to make Test server to try this application without 42 verification
+### Currently, the application is not available to anyone who is not a member of a 42 institution. We are plannig to make Test server to try this application without 42 verification
 
 First you need to create an env file in the correct location.
 In that location, there is a document listing the env files that should be used.
